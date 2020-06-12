@@ -1,0 +1,145 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    
+}
+:root {
+    --title-collor: #322153;
+    --primari-color: #34cb79;
+}
+
+html {
+    font-family: Roboto, sans-serif;
+}
+
+body{
+    background: #f0f0f5;
+    -webkit-font-smoothing: antialiased; /* Presentação um pouco melhor de se vê */
+}
+
+a {
+    text-decoration: none; /* para tirar o sublinhado de todos os elementos "A" */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--title-collor);
+    font-family: Ubuntu, sans-serif;
+}
+
+/*  BOX MODEL
+
+Modelo de caixa
+Toda caixa tem
+largura, Altura, Espaçamentos, Preenchimentos,
+Bordas, Cor, Fundo, Maneira que é vista pelo HTML (diplay),
+Posicionamentos, Alinhamentos.
+
+*/
+#page-home {
+    height: 100vh; /* Altura: vh; */
+    background: url('../extras-aula-1/assets/home-background.svg') no-repeat ;
+    background-position: 35vw bottom; /* posição largura; grudado no botton */
+}
+
+#page-home .content {
+    width: 90%; /* Espaço de sobra */
+    max-width: 1100px; /* Largura maxima */
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#page-home header {
+    margin-top: 48px; /* Para não ficar tão colado lá encima */
+    display: flex;   /* Exibição do tipo flex vai colocar um elemento ao lado do outro dentro da caixa.  */
+     /*exibição do tipo block: Ocupa a linha inteira; tipo inline: Somente onde vai ocupar o tanho da caixa. Esses são para elementos fora da caixa.  */
+    align-items: center; /* Alinha-Itens: Alinha os itens ao eixo X (horizontal) */
+    justify-content: space-between; /* Justificar-Conteudo: Espaço_Entre-Eles */
+}
+
+#page-home header a {
+    display: flex; /* para os elementos dentro do "A" e "Span" ficarem um ao lado do outro */
+    color: var(--title-collor);
+    font-weight: 700; /* peso da fonte */
+}
+
+#page-home header a span {
+
+    margin-right: 16px; /* Espaçamento entre o "span e o A" */
+
+    display: flex; /* para a imagem funcionar */
+
+    background-image: url(../extras-aula-1/assets/log-in.svg);
+    /* Precisa de uma altura e largura */
+    width: 20px; /* Largura */
+    height: 20px; /* Altura */
+}
+
+#page-home main {
+    max-width: 560px; /* Largura Maxima */
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#page-home main h1 {
+    font-size: 54px; /* Tamanho da Fonte */
+}
+
+#page-home main p {
+    font-size: 24px;
+    line-height: 38px;
+    margin-top: 24px;
+}
+
+#page-home main a {
+    width: 100%; /* Largura */
+    max-width: 360px; /* Maximo Largura */
+    height: 72px; /* Altura */
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center; /* Alinhar o texto no eixo Y */
+
+    margin-top: 40px;
+
+    background-color: var(--primari-color);
+
+    transition: 400ms;
+
+    font-weight: bold;
+
+    color: white;
+}
+
+#page-home main a:hover {
+    background-color: #2fb86e;
+    
+}
+
+#page-home main a span {
+    width: 72px;
+    height: 72px;
+
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-home main a span::after {
+    content: "";
+    background-image: url('../extras-aula-1/assets/search.svg');
+
+    width: 20px;
+    height: 20px;
+}
